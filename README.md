@@ -43,16 +43,57 @@ neutrino_oscillations/
 
 ## Installation
 
-From this folder:
+You need **Python ≥ 3.9**. Everything else (numpy, matplotlib, SciencePlots, Jupyter) is installed
+automatically with the package. Run all commands from this folder.
+
+**Option A: a virtual environment (recommended)**
 
 ```bash
-pip install -e .
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -e .
+jupyter notebook tutorial_nuosc.ipynb
 ```
 
-This installs the `nuosc` package and everything the notebooks need (numpy, matplotlib,
-SciencePlots, jupyter). `-e` (editable) keeps the package linked to this folder, so the data
-folders (`fluxes/`, `data/`, `far_detector_spectra/`) are found automatically; with a plain
-`pip install .` run the notebooks from this folder or set `NUOSC_ROOT` to its path.
+**Option B: conda**
+
+```bash
+conda create -n nuosc python=3.11
+conda activate nuosc
+python -m pip install -e .
+jupyter notebook tutorial_nuosc.ipynb
+```
+
+**Option C: no environment**
+
+```bash
+python3 -m pip install --user -e .
+```
+
+Some systems (recent macOS with Homebrew Python, Ubuntu ≥ 23.04) refuse this with
+`error: externally-managed-environment`: use option A or B instead.
+
+`-e` (editable) keeps the package linked to this folder, so changes to `nuosc/` are used immediately.
+
+**Check that it works**
+
+```bash
+python -c "import nuosc; print(nuosc.NeutrinoOscillator())"
+```
+
+**Troubleshooting**
+
+* `ModuleNotFoundError: No module named 'nuosc'` inside Jupyter: the notebook is running a different Python
+  from the one where you installed the package. Always use `python -m pip ...` (not a bare `pip`) and start
+  Jupyter from the same activated environment, or register the environment as a kernel and select it in
+  Jupyter (*Kernel → Change kernel → nuosc*):
+  ```bash
+  python -m ipykernel install --user --name nuosc
+  ```
+* In VS Code, select the interpreter / kernel of the environment where you ran `pip install -e .`.
+* No LaTeX installation is needed: without the `latex_style` style the notebooks use SciencePlots
+  without LaTeX, or the matplotlib default.
 
 **Plot style is optional.** Every notebook starts with `SET_STYLE = True` and `c = set_style(SET_STYLE)`:
 
