@@ -1,0 +1,6 @@
+# Installing the package installs everything:  pip install -e .
+numpy>=1.21
+matplotlib>=3.5
+SciencePlots>=2.0
+jupyter
+ipykernel

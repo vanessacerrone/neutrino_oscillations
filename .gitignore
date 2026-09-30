@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+._*
+__MACOSX/
+
+# Original download archives (their extracted content is kept in the repo)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Papers downloaded for reference (not redistributed)
+data/T2K_OA2019_release/*.pdf
+data/HyperK_DR_1805.04163/*.pdf
+
+# packaging
+build/
+dist/
