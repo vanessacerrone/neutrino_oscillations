@@ -1,0 +1,5 @@
+# NOvA 2024 FD nue CC samples: total events (the histograms are in PID x energy 'analysis bins').
+# sample,POT,data,total_pred,signal,beam_nue_bkg,wrong_sign_bkg,NC_bkg,NumuCC_bkg,TauCC_bkg,cosmic_bkg
+nue_fhc,2.661e+21,169,180.72,125.31,26.15,1.76,16.84,4.43,0.75,5.47
+nue_rhc,1.25e+21,32,31.12,18.92,6.48,2.13,2.05,0.36,0.09,1.09
+nue_lowe_fhc,2.661e+21,12,10.49,3.42,0.78,0.09,5.31,0.29,0.08,0.52

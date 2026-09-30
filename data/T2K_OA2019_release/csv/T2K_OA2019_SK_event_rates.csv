@@ -1,0 +1,11 @@
+# T2K Run 1-9 SK event rates, arXiv:2101.03779 (PRD 103, 112008), Table XI.
+# Exposure: 14.94e20 POT FHC, 16.35e20 POT RHC.
+# Predicted total events per SK sample for four values of delta_CP; other oscillation parameters
+# fixed to Table III (sin2_23=0.528, sin2_13=0.0212, sin2_12=0.304, dm2_32=2.509e-3 eV^2 NO,
+# dm2_21=7.53e-5 eV^2), systematic parameters at nominal values. Last row: observed data.
+# delta_cp_rad,FHC_mu_like,RHC_mu_like,FHC_e_like,RHC_e_like,FHC_e_CC1pi
+-1.5708,272.4,139.5,74.4,17.1,7.0
+0.0,272.0,139.2,62.2,19.6,6.1
+1.5708,272.4,139.5,50.6,21.7,4.9
+3.1416,272.8,139.9,62.7,19.3,5.9
+observed,243,140,75,15,15

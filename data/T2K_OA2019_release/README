@@ -1,0 +1,57 @@
+
+This archive contains the electronic version (ROOT format) of the results of the measurements of oscillation parameters corresponding to the paper "Improved constraints on neutrino mixing from the T2K experiment with 3.13 × 10^21 protons on target" (final run 1-9 results).
+
+*** Results included in this release ***
+The results obtained by the three analyses labelled A, B and C in the paper are provided in three different root files. The analyses and their differences are described in part IX of the paper, "Oscillation Analysis Fitters". Depending on the analysis, either frequentist (analyses A and C) or Bayesian (analysis B) results are provided.
+
+2D confidence/credible regions, and 2D DeltaChi2/posterior probabilities maps are provided for different combinations of oscillation parameters measured by T2K. Additionally, the 1D DeltaChi2/posterior probability distributions are provided for delta_CP with the critical values obtained with the Feldman-Cousins method for analyses A and C.
+
+On top of the results for each mass ordering hypothesis, analysis B also includes the results marginalized over the mass orderings, denoted by a tag "both" in the object names.
+Please note that Bayesian and frequentist results use different conventions for the mass splitting in the inverted ordering: the Bayesian results are in term of #Deltam^{2}_{32} for both normal (NO) and inverted (IO) orderings, whereas the frequentist results are plotted versus #Deltam^{2}_{32} for the NO, and  |#Deltam^{2}_{31}| for the IO.
+
+When used, the constraint on theta13 from reactor experiment results corresponds to the value in the PDG 2018 summary table: sin^2(theta_13)=(2.12+-0.08) x 10^{-2}
+
+
+
+*** Objects inside the ROOT files ***
+ROOT objects contained inside the files are named using a series of tags, indicating the analysis used, whether it corresponds to DeltaChi2 (frequentist results) or posterior probabilities (Bayesian results), which parameter(s) are being shown, whether or not the PDG constraint on theta13 has been applied ("wRC" or "woRC" respectively), and a tag for the mass ordering: "NO", "IO" or "both" - indicating whether the result is respectively for the normal ordering,  inverted ordering or marginalized over the mass ordering (this last case is only included for analysis B).
+
+** 2D maps **
+Objects of the form
+<A,B,C>_2D_<dchi2, posterior>_varX_varY_<wRC,woRC>_<NO,IO,both>
+are TH2D giving the DeltaChi2("dchi2) or posterior probability("posterior") as a function of (varX, varY).
+The best fit in each case are provided as TGraphs
+<A,B,C>_2D_<dchi2, posterior>_varX_varY_<wRC,woRC>_<NO,IO,both>_BestFit
+
+** 2D regions **
+Objects of the form
+<A,B,C>_2D_<dchi2, posterior>_varX_varY_<wRC,woRC>_<NO,IO,both>_<conf,cred><68,90,955>(_N)
+are TGraphs corresponding to the 2D confidence ("conf") or credible ("cred") regions for the 2 variables (varX, varY). N is the iterator for different TGraphs corresponding to the same region.
+68, 90, 955 correspond respectively to 1-sigma, 90%, 2-sigma regions.
+
+** 1D plots **
+Objects of the form
+<A,B,C>_1D_<dchi2, posterior>_dcp_<wRC,woRC>_<NO,IO,both>
+are TH1D of the DeltaChi2 ("chi2") or posterior probability ("posterior") for delta_CP.
+
+The Bayesian and frequentist results use different conventions with respect to the mass ordering:
+- 1D DeltaChi2 plots use a global minimum over both orderings
+- each 1D posterior probability plot integrates to unity *individually*
+
+For analysis B, the boundaries of the 1D credible intervals for delta_CP are provided as TVectorD:
+B_1D_posterior_dcp_<wRC,woRC>_<NO,IO,both>_<conf,cred><68,90,955>[N]
+N=0: lower bound of the credible interval
+N=1: upper bound of the credible interval
+
+
+
+*** Additional notes for frequentist results ***
+
+Important note about coverage of confidence regions: the 2D frequentist regions were computed using the standard DeltaChi2 values (from the Gaussian case), and not the Feldman Cousins method. They therefore have only approximate coverage.
+
+For the 1D plots, critical delta chi2 values obtained with the Feldman Cousins method are provided for deltaCP (T2K+reactor case only):
+<A,C>_1D_gCritical_dcp_wRC_<MH>_conf<CL>
+    MH:       NO, IO
+    CL:       68, 90, 955, 997 for 1-sigma, 90%, 2-sigma, and 3-sigma
+
+To obtain the FC-corrected confidence interval in those 2 cases for a given confidence level, take the intersection of gCritical with the corresponding 1D histogram.
